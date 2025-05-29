@@ -1,21 +1,82 @@
 {
+  "compileOnSave": false,
   "compilerOptions": {
-    "composite": true,
-    "declarationMap": true,
-    "emitDeclarationOnly": true,
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
     "importHelpers": true,
-    "isolatedModules": true,
-    "lib": ["es2022"],
+    "target": "es2015",
     "module": "esnext",
-    "moduleResolution": "bundler",
-    "noEmitOnError": true,
-    "noFallthroughCasesInSwitch": true,
-    "noImplicitOverride": true,
-    "noImplicitReturns": true,
-    "noUnusedLocals": true,
+    "lib": ["es2020", "dom"],
     "skipLibCheck": true,
-    "strict": true,
-    "target": "es2022",
-    "customConditions": ["development"]
-  }
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      // === PROJECT-LEVEL ALIASES ===
+      "@performance-wealth-tracker/main-dashboard": [
+        "apps/main-dashboard/src/index.ts"
+      ],
+      "@performance-wealth-tracker/main-dashboard/*": [
+        "apps/main-dashboard/src/*"
+      ],
+
+      // === LIBRARY ALIASES ===
+      "@performance-wealth-tracker/ui-components": [
+        "libs/ui-components/src/index.ts"
+      ],
+      "@performance-wealth-tracker/ui-components/*": [
+        "libs/ui-components/src/*"
+      ],
+      "@performance-wealth-tracker/data-access": [
+        "libs/data-access/src/index.ts"
+      ],
+      "@performance-wealth-tracker/data-access/*": ["libs/data-access/src/*"],
+      "@performance-wealth-tracker/shared-utils": [
+        "libs/shared-utils/src/index.ts"
+      ],
+      "@performance-wealth-tracker/shared-utils/*": ["libs/shared-utils/src/*"],
+
+      // === MAIN DASHBOARD APP ALIASES ===
+      // The @ symbol is a Vue convention meaning "src root of current app"
+      "@/*": ["apps/main-dashboard/src/*"],
+
+      // === STRUCTURAL ALIASES ===
+      // These map to app's folder structure
+      "@/components/*": ["apps/main-dashboard/src/components/*"],
+      "@/views/*": ["apps/main-dashboard/src/views/*"],
+      "@/router/*": ["apps/main-dashboard/src/router/*"],
+      "@/assets/*": ["apps/main-dashboard/src/assets/*"],
+      "@/styles/*": ["apps/main-dashboard/src/styles/*"],
+
+      // === ARCHITECTURAL ALIASES ===
+      // These represent logical layers of application
+      "@/composables/*": ["apps/main-dashboard/src/composables/*"],
+      "@/stores/*": ["apps/main-dashboard/src/stores/*"],
+      "@/services/*": ["apps/main-dashboard/src/services/*"],
+      "@/api/*": ["apps/main-dashboard/src/api/*"],
+      "@/types/*": ["apps/main-dashboard/src/types/*"],
+      "@/utils/*": ["apps/main-dashboard/src/utils/*"],
+
+      // === FEATURE-BASED ALIASES ===
+      // These organize code by business domain, not technical concerns
+      "@/sports/*": ["apps/main-dashboard/src/features/sports/*"],
+      "@/investments/*": ["apps/main-dashboard/src/features/investments/*"],
+      "@/profile/*": ["apps/main-dashboard/src/features/profile/*"],
+      "@/dashboard/*": ["apps/main-dashboard/src/features/dashboard/*"],
+
+      // === SHARED/COMMON ALIASES ===
+      // For code that's used across multiple features
+      "@/shared/*": ["apps/main-dashboard/src/shared/*"],
+      "@/common/*": ["apps/main-dashboard/src/common/*"],
+
+      // === TESTING ALIASES ===
+      // Helpful for test files and mocks
+      "@/tests/*": ["apps/main-dashboard/src/tests/*"],
+      "@/mocks/*": ["apps/main-dashboard/src/mocks/*"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
 }

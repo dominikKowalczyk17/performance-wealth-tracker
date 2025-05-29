@@ -1,5 +1,9 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "workspaceLayout": {
+    "appsDir": "apps",
+    "libsDir": "libs"
+  },
   "namedInputs": {
     "default": ["{projectRoot}/**/*", "sharedGlobals"],
     "production": [
@@ -45,7 +49,7 @@
         "serveStaticTargetName": "serve-static",
         "typecheckTargetName": "typecheck",
         "buildDepsTargetName": "build-deps",
-        "watchDepsTargetName": "watch-deps"
+        "watchDepsName": "watch-deps"
       }
     },
     {
@@ -59,5 +63,8 @@
     "test": {
       "dependsOn": ["^build"]
     }
+  },
+  "sync": {
+    "applyChanges": true
   }
 }

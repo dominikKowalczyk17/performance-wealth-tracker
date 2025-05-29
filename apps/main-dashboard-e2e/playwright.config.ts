@@ -24,8 +24,7 @@ export default defineConfig({
   },
   /* Run your local dev server before starting the tests */
   webServer: {
-    command:
-      'npx nx run @performance-wealth-tracker/performance-wealth-tracker:preview',
+    command: 'npx nx run @performance-wealth-tracker/main-dashboard:preview',
     url: 'http://localhost:4300',
     reuseExistingServer: true,
     cwd: workspaceRoot,

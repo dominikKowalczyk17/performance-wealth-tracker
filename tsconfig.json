@@ -4,10 +4,10 @@
   "files": [],
   "references": [
     {
-      "path": "./apps/performance-wealth-tracker-e2e"
+      "path": "./apps/main-dashboard-e2e"
     },
     {
-      "path": "./apps/performance-wealth-tracker"
+      "path": "./apps/main-dashboard"
     }
   ]
 }
